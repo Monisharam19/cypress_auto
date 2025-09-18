@@ -10,7 +10,8 @@ pipeline {
 
         CI = "true"
         CYPRESS_baseUrl = 'https://opensource-demo.orangehrmlive.com'
-        CYPRESS_PATH = 'C:/Users/Ascendion/AppData/Local/Cypress/Cache'
+        CYPRESS_CACHE_FOLDER = 'C:/Users/Ascendion/AppData/Local/Cypress/Cache'
+        CYPRESS_INSTALL_BINARY = 'C:/Users/Ascendion/AppData/Local/Cypress/Cache/15.2.0'
  
     }
  
