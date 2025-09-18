@@ -1,26 +1,30 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress');
  
 module.exports = defineConfig({
   e2e: {
-     reporter: "mochawesome",
-    reporterOptions: {
-      reportDir: "cypress/reports",
-      overwrite: false,
-      html: false,
-      json: true},
-    experimentalStudio: true,
-    screenshotOnRunFailure: true, // Auto-screenshot on test failure
-screenshotsFolder: 'cypress/screenshots',
-video: true, // Record videos
-videoUploadOnPasses: false,
-trashAssetsBeforeRuns: true,// Don't upload videos of passing tests
-videosFolder: 'cypress/videos', // Videos save location
-viewportWidth: 1280, // Set video dimensions
-viewportHeight: 720,
+    baseUrl: 'https://opensource-demo.orangehrmlive.com',
  
-    setupNodeEvents(on, config) {
-     
-      // implement node event listeners here
+    // Screenshot & video settings
+    screenshotOnRunFailure: true,
+    screenshotsFolder: 'cypress/screenshots',
+   
+    video: true,
+    videoUploadOnPasses: true,
+    videosFolder: 'cypress/videos',
+ 
+    // Reporter configuration
+    reporter: 'mochawesome',
+    reporterOptions: {
+      reportDir: 'cypress/reports',
+      overwrite: false,
+      html: true,
+      json: true,
+      charts: true,
+      reportPageTitle: 'OrangeHRM Test Report',
+      inlineAssets: true,
     },
-  },
+ 
+    viewportWidth: 1280,
+    viewportHeight: 720
+  }
 });
