@@ -1,10 +1,16 @@
 pipeline {
  
     agent any
+
+    tools{
+        nodejs 'NodeJS'
+    }
  
     environment {
- 
+
+        CI = "true"
         CYPRESS_baseUrl = 'https://opensource-demo.orangehrmlive.com'
+        CYPRESS_PATH = 'C:/Users/Ascendion/AppData/Local/Cypress/Cache'
  
     }
  
@@ -25,8 +31,6 @@ pipeline {
             steps {
  
                 bat 'npm install'
- 
-                bat 'npx cypress install'
  
             }
  
